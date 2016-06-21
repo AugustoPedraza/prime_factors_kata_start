@@ -1,5 +1,4 @@
 class PrimeFactorsKata
-  # Your code goes here...
   def descompose(number)
     multipliers = []
 
