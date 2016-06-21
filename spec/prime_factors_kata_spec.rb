@@ -51,5 +51,14 @@ describe PrimeFactorsKata do
       expect(subject).to match([2, 2, 3, 7, 11])
     end
   end
+
+  context "when the input is too big" do
+    let(:number) { 2**10_000 }
+
+    it "returns its descomposition" do
+      expected_result = Array.new(10_000) { 2 }
+      expect(subject).to match(expected_result)
+    end
+  end
 end
 

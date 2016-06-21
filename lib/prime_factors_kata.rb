@@ -1,11 +1,18 @@
 class PrimeFactorsKata
   # Your code goes here...
   def descompose(number)
-    return [number] if is_prime? number
+    multipliers = []
 
-    first_multiplier = calculate_minimal_multiplier number
+    current_number = number
 
-    ([first_multiplier] << descompose(number/first_multiplier)).flatten
+    until is_prime?(current_number)
+      multiplier = calculate_minimal_multiplier(current_number)
+      multipliers << multiplier
+
+      current_number = current_number/multiplier
+    end
+
+    multipliers << current_number
   end
 
   private
