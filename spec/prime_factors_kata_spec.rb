@@ -44,11 +44,12 @@ describe PrimeFactorsKata do
     end
   end
 
-  context "when the input is 27" do
-    let(:number) { 27 }
+  context "when the input is 924" do
+    let(:number) { 924 }
 
     it "returns its descomposition" do
-      expect(subject).to match([3, 3, 3])
+      expect(subject).to match([2, 2, 3, 7, 11])
     end
   end
 end
+
